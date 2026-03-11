@@ -1,0 +1,18 @@
+[package]
+name = "eko_rust"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+# The name here MUST match the name in your #[pymodule] in lib.rs
+name = "eko_rust"
+# "cdylib" is required for Python to load the shared object (.so) file
+crate-type = ["cdylib"]
+
+[dependencies]
+numpy = "0.23"
+pyo3 = { version = "0.23", features = ["extension-module"] }
+ndarray = { version = "0.16" , features = ["rayon"] }
+rayon ="1.10"
+splines = "4.3" # for the smooth physics curves
+num-complex = "0.4" # for N-space physics
